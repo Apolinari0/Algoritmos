@@ -7,17 +7,25 @@
 
 jogador = {}
 partidas = list()
-
+##pega nome e qntd de jogos
 jogador['Nome'] = str(input("Nome: "))
 QtdJogos = int(input("Qtd de jogos: "))
+
+#pela qtd de jogos, roda um for pegando os gols
 for i in range(QtdJogos):
   partidas.append(int(input(f'Quantidade de gols na partida {i+1}:')))
 
 total = sum(partidas)
+#transfere lista partidas com os gols para o dict jogador
 jogador['gols'] = partidas[:]
 jogador['total'] = total
 print('*'*30)
 
+#mostra partida -> gols
 for i, j in enumerate(jogador['gols']):
   print(f"partida {i+1} - {j} gols")
+
+#total de gols com o nome
 print(f"total de gols do jogador {jogador['Nome']}: {total}")
+
+print('*'*30)
